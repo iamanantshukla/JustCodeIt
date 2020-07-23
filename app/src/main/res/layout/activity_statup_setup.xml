@@ -4,19 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartupSetup">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/accountsetup" />
+    tools:context=".StartupSetup"
+    android:background="@mipmap/accountsetup">
 
 
-    </RelativeLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageProfile"
@@ -41,8 +32,9 @@
         android:layout_marginBottom="271dp"
         android:background="@mipmap/rectangle"
         android:ems="10"
-        android:hint="   Username"
+        android:hint="Username"
         android:inputType="textPersonName"
+        android:paddingStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
