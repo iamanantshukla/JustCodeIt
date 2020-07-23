@@ -5,33 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="246dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="440dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:srcCompat="@mipmap/loginhome" />
+
+
+    </RelativeLayout>
+
 
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="328dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="358dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="399dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="287dp"
+        android:background="@mipmap/rectangle"
         android:ems="10"
-        android:hint="Email"
+        android:hint="   Email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +41,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
-        android:layout_marginTop="412dp"
+        android:layout_marginTop="482dp"
         android:layout_marginEnd="99dp"
-        android:layout_marginBottom="274dp"
+        android:layout_marginBottom="204dp"
+        android:background="@mipmap/rectangle"
         android:ems="10"
-        android:hint="Password"
+        android:hint="   Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,31 +54,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="514dp"
-        android:layout_marginEnd="221dp"
-        android:layout_marginBottom="170dp"
-
-        android:text="LOGIN"
+        android:id="@+id/buttonSignup"
+        android:layout_width="150dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="654dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="31dp"
+        android:background="#F3717F"
+        android:text="SIGNUP"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/buttonLogin"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
 
     <Button
-        android:id="@+id/buttonSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="226dp"
-        android:layout_marginTop="514dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="170dp"
-        android:text="SIGNUP"
+        android:id="@+id/buttonLogin"
+        android:layout_width="150dp"
+        android:layout_height="46dp"
+
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="654dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="31dp"
+        android:background="#F3717F"
+        android:text="LOGIN"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSignup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

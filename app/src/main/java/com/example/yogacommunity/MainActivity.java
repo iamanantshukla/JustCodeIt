@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth= FirebaseAuth.getInstance();
-        username= (EditText) findViewById(R.id.editUsername);
+
         password=(EditText) findViewById(R.id.editPass);
         email= (EditText) findViewById(R.id.editEmail);
         Login= (Button) findViewById(R.id.buttonLogin);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String usernametxt=username.getText().toString();
+
                 String passwordtxt=password.getText().toString();
                 String emailtxt=email.getText().toString();
                 register(emailtxt, passwordtxt);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usernametxt=username.getText().toString();
+
                 String passwordtxt=password.getText().toString();
                 String emailtxt=email.getText().toString();
                 LoginTask(emailtxt, passwordtxt);
@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
                     FirebaseUser user=mAuth.getCurrentUser();
                     Toast.makeText(getApplicationContext(),"Registration Successful", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this, StartupSetup.class));
+
 
 
 
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                     FirebaseUser user=mAuth.getCurrentUser();
                     Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this, StartupSetup.class));
 
 
 
