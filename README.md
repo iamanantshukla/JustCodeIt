@@ -29,6 +29,6 @@ Future Features/Updates
 How to use
 -----------
 
-1: Register with an email and Password (This email will be used for future Login).
-2: Upload a Profile Picture and Username.
-3: Home Screen will come from where you can either go to Yoga section or community section.
+Step 1: Register with an email and Password (This email will be used for future Login).
+Step 2: Upload a Profile Picture and Username.
+Step 3: Home Screen will come from where you can either go to Yoga section or community section.
