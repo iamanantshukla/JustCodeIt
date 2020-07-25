@@ -1,0 +1,29 @@
+{
+"workouts" : [
+	{
+		"title": "Tadasana\n(Mountain Pose)",
+		"description": "this is how you do it 1",
+		"link": "s2NQhpFGIOg"
+	},
+	{
+		"title": "Vrikshasana\n(Tree Pose)",
+		"description": "this is how you do it 2",
+		"link": "Y7SuK09yw58"
+	},
+	{
+		"title": "Adho Mukho Svanasana\n(Downward Facing Dog Pose)",
+		"description": "this is how you do it 3",
+		"link": "s2NQhpFGIOg"
+	},
+	{
+		"title": "Trikonasana\n(Triangle Pose)",
+		"description": "this is how you do it 4",
+		"link": "Y7SuK09yw58"
+	},
+	{
+		"title": "Kursiasana\n(Chair Pose)",
+		"description": "this is how you do it 5",
+		"link": "s2NQhpFGIOg"
+	}
+]
+}	

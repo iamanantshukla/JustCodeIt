@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">292560187858-ag558o3h0d4or43s342d6le1hi76naul.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://yoga-a8380.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">292560187858</string>
+    <string name="google_api_key" translatable="false">AIzaSyAyKDJwfWYJgWd2rWR4d3PHXQgnvmfvYho</string>
+    <string name="google_app_id" translatable="false">1:292560187858:android:806a2f7d1f9de3f5a6980b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAyKDJwfWYJgWd2rWR4d3PHXQgnvmfvYho</string>
+    <string name="google_storage_bucket" translatable="false">yoga-a8380.appspot.com</string>
+    <string name="project_id" translatable="false">yoga-a8380</string>
+</resources>
