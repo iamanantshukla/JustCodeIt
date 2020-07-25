@@ -20,7 +20,7 @@ Features:
 
 Future Features/Updates
 ----------
-1. Instructor Login
+1. Instructor Login.
       A) People can Follow instructor and chat with them.
       B) Instructor can upload Yoga video series.
 2. Find people and friends near you who use the app (User will have option to permit or not).
@@ -29,6 +29,6 @@ Future Features/Updates
 How to use
 -----------
 
-Step-1: Register with an email and Password (This email will be used for future Login)
-Step 2: Upload a Profile Picture and Username
+Step-1: Register with an email and Password (This email will be used for future Login).
+Step 2: Upload a Profile Picture and Username.
 Step 3: Home Screen will come from where you can either go to Yoga section or community section.
