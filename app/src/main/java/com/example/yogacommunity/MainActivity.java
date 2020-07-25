@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                     FirebaseUser user=mAuth.getCurrentUser();
                     Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MainActivity.this, StartupSetup.class));
+                    startActivity(new Intent(MainActivity.this, Community_Home.class));
 
 
 
