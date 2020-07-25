@@ -21,8 +21,8 @@ Features:
 Future Features/Updates
 ----------
 1. Instructor Login
-      --> People can Follow instructor and chat with them.
-      --> Instructor can upload Yoga video series.
+      A) People can Follow instructor and chat with them.
+      B) Instructor can upload Yoga video series.
 2. Find people and friends near you who use the app (User will have option to permit or not).
 
 
