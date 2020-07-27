@@ -32,7 +32,7 @@
         <activity
             android:name=".Community_Home"
             android:theme="@style/AppTheme.myActivity" />
-        <activity android:name=".StartupSetup" />
+        <activity android:name=".StartupSetup" android:theme="@style/AppTheme.myActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
