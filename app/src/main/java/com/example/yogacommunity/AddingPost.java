@@ -98,6 +98,7 @@ public class AddingPost extends AppCompatActivity {
 
                     if(Discription.isEmpty()){
                         Toast.makeText(getApplicationContext(), "Discription Box is Empty", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                     else{
 
@@ -122,8 +123,10 @@ public class AddingPost extends AppCompatActivity {
                                             map.put("TimeStamp", currentTime);
                                             databaseReference.child("Post").child(random).setValue(map);
 
+
                                         }
                                     });
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     startActivity(new Intent(AddingPost.this, Community_Home.class));
                                     /*filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                         @Override
@@ -140,6 +143,7 @@ public class AddingPost extends AppCompatActivity {
                                 }
                                 else{
                                     Toast.makeText(getApplicationContext(), "Couldn't update in Database", Toast.LENGTH_LONG).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
                                 }
                             }
                         });
@@ -148,8 +152,9 @@ public class AddingPost extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "No Image", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
-                progressBar.setVisibility(View.INVISIBLE);
+
             }
         });
 

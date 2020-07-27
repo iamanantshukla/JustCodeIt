@@ -166,6 +166,19 @@ public class StartupSetup extends AppCompatActivity {
                     });
 
                 }
+                else{
+
+                    if(TextUtils.isEmpty(usernametxt)){
+                        Toast.makeText(getApplicationContext(), "Fill the username", Toast.LENGTH_LONG).show();
+                    }
+                    else {
+
+                        Toast.makeText(getApplicationContext(), "Upload a Profile Image", Toast.LENGTH_LONG).show();
+
+                    }
+                    progressBar.setVisibility(View.INVISIBLE);
+
+                }
             }
         });
 
