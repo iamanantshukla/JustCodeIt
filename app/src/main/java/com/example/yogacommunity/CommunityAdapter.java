@@ -101,7 +101,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String profile_uri=dataSnapshot.child("ProfilePic").getValue().toString();
+                    String profile_uri = dataSnapshot.child("ProfilePic").getValue().toString();
                     Glide.with(context).load(profile_uri).into(ProfilePic);
 
                     String Username= dataSnapshot.child("username").getValue().toString();

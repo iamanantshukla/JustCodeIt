@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.renderscript.Script;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -46,7 +49,7 @@ public class AddingPost extends AppCompatActivity {
     private ImageView postImage;
     private Button postButton;
     private TextView postDiscription;
-    private Uri postimageuri=null;
+    private Uri postimageuri = null;
     private FirebaseDatabase firebaseDatabase;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
@@ -55,36 +58,35 @@ public class AddingPost extends AppCompatActivity {
     private ProgressBar progressBar;
 
 
-
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_post);
 
-        firebaseDatabase= FirebaseDatabase.getInstance();
-        databaseReference= firebaseDatabase.getReference();
-        storageReference=FirebaseStorage.getInstance().getReference();
-        auth=FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+        storageReference = FirebaseStorage.getInstance().getReference();
+        auth = FirebaseAuth.getInstance();
 
-        user_id= auth.getCurrentUser().getUid();
-
-
-        final StorageReference mStorageReference= storageReference.child("image_Post").child(user_id);
+        user_id = auth.getCurrentUser().getUid();
 
 
-        postImage= findViewById(R.id.imagePost);
-        postButton=findViewById(R.id.postFinal);
-        postDiscription=findViewById(R.id.editDiscription);
-        progressBar=findViewById(R.id.progressBar2);
+        final StorageReference mStorageReference = storageReference.child("image_Post").child(user_id);
+
+
+        postImage = findViewById(R.id.imagePost);
+        postButton = findViewById(R.id.postFinal);
+        postDiscription = findViewById(R.id.editDiscription);
+        progressBar = findViewById(R.id.progressBar2);
 
         postImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
-                        .setAspectRatio(1,1)
                         .setMinCropResultSize(512,512)
+                        .setAspectRatio(5, 3)
                         .start(AddingPost.this);
             }
         });
@@ -93,21 +95,20 @@ public class AddingPost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
-                final String Discription= postDiscription.getText().toString();
-                if(postimageuri!=null){
+                final String Discription = postDiscription.getText().toString();
+                if (postimageuri != null) {
 
-                    if(Discription.isEmpty()){
+                    if (Discription.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Discription Box is Empty", Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.INVISIBLE);
-                    }
-                    else{
+                    } else {
 
-                        final String random= UUID.randomUUID().toString();
-                        final StorageReference filePath=storageReference.child("image_Post").child(user_id).child(random+ ".jpg");
+                        final String random = UUID.randomUUID().toString();
+                        final StorageReference filePath = storageReference.child("image_Post").child(user_id).child(random + ".jpg");
                         filePath.putFile(postimageuri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                                if(task.isSuccessful()){
+                                if (task.isSuccessful()) {
 
                                     filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                         @Override
@@ -116,7 +117,7 @@ public class AddingPost extends AppCompatActivity {
                                             String Download_Uri = uri.toString();
 
                                             String currentTime = Calendar.getInstance().getTime().toString();
-                                            HashMap<String, String>map= new HashMap<>();
+                                            HashMap<String, String> map = new HashMap<>();
                                             map.put("DownloadLink", Download_Uri);
                                             map.put("Discription", Discription);
                                             map.put("userID", user_id);
@@ -140,8 +141,7 @@ public class AddingPost extends AppCompatActivity {
                                         }
                                         });*/
 
-                                }
-                                else{
+                                } else {
                                     Toast.makeText(getApplicationContext(), "Couldn't update in Database", Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.INVISIBLE);
                                 }
@@ -149,8 +149,7 @@ public class AddingPost extends AppCompatActivity {
                         });
                     }
 
-                }
-                else{
+                } else {
                     Toast.makeText(getApplicationContext(), "No Image", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.INVISIBLE);
                 }
@@ -159,20 +158,24 @@ public class AddingPost extends AppCompatActivity {
         });
 
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
 
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
 
-                postimageuri=result.getUri();
+                postimageuri = result.getUri();
                 postImage.setImageURI(postimageuri);
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
         }
+
+
     }
 }
