@@ -17,4 +17,5 @@
     <string name="img_desc">Various Poses</string>
     <string name="watch">Watch</string>
     <string name="hello_blank_fragment">hello</string>
+    <string name="logout">LogOut</string>
 </resources>

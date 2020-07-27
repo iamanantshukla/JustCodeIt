@@ -21,7 +21,7 @@ public class StartWorkout extends AppCompatActivity implements View.OnClickListe
     public int j;
     public String t;
     private static final String TAG = "StartWorkout";
-    private static final long START_TIME_IN_MILLIS = 6000;
+    private static final long START_TIME_IN_MILLIS = 61000;
     private CountDownTimer countDownTimer;
     private Boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
