@@ -13,12 +13,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppHomePage"></activity>
-        <activity android:name=".Details" />
-        <activity android:name=".StartWorkout" />
-        <activity android:name=".Beginner" />
-        <activity android:name=".AddingPost" />
-        <activity android:name=".Community_Home" />
+        <activity android:name=".Settings" android:theme="@style/AppTheme.myActivity"/>
+        <activity
+            android:name=".AppHomePage"
+            android:theme="@style/AppTheme.myActivity" />
+        <activity
+            android:name=".Details"
+            android:theme="@style/AppTheme.myActivity" />
+        <activity
+            android:name=".StartWorkout"
+            android:theme="@style/AppTheme.myActivity" />
+        <activity
+            android:name=".Beginner"
+            android:theme="@style/AppTheme.myActivity" />
+        <activity
+            android:name=".AddingPost"
+            android:theme="@style/AppTheme.myActivity" />
+        <activity
+            android:name=".Community_Home"
+            android:theme="@style/AppTheme.myActivity" />
         <activity android:name=".StartupSetup" />
         <activity android:name=".MainActivity">
             <intent-filter>

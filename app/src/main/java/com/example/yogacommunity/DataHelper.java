@@ -38,6 +38,9 @@ public class DataHelper {
                 workout.setTitle(jsonObject.getString("title"));
                 workout.setDescription(jsonObject.getString("description"));
                 workout.setLink(jsonObject.getString("link"));
+                workout.setTitleExpress(jsonObject.getString("titleExpress"));
+                workout.setDescriptionExpress(jsonObject.getString("descriptionExpress"));
+                workout.setLinkExpress(jsonObject.getString("linkExpress"));
 
                 workouts.add(workout);
             }
