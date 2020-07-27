@@ -135,20 +135,26 @@ public class StartupSetup extends AppCompatActivity {
                     imagePath.putFile(mainImageURI).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
+
+                                imagePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String Download_Uri = uri.toString();
 
 
+                                        HashMap<String, String> map = new HashMap<>();
+                                        map.put("username", usernametxt);
+                                        map.put("ProfilePic", Download_Uri);
 
-                                HashMap<String, String> map= new HashMap<>();
-                                map.put("username", usernametxt);
+                                        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id)
+                                                .setValue(map);
+                                        startActivity(new Intent(StartupSetup.this, AppHomePage.class));
 
-                                reff= FirebaseDatabase.getInstance().getReference().child("Users").child(user_id)
-                                        .setValue(map);
-                                startActivity(new Intent(StartupSetup.this, Community_Home.class));
-
+                                    }
 
 
-
+                                });
                             }
                             else{
 

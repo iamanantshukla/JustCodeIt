@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Details"></activity>
+        <activity android:name=".AppHomePage"></activity>
+        <activity android:name=".Details" />
         <activity android:name=".StartWorkout" />
         <activity android:name=".Beginner" />
         <activity android:name=".AddingPost" />

@@ -12,35 +12,40 @@
         android:layout_width="55dp"
         android:layout_height="57dp"
         android:layout_marginStart="331dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="580dp"
         android:layout_marginEnd="23dp"
-        android:layout_marginBottom="24dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/BottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="60dp"
+        app:srcCompat="@mipmap/baseline_add_black_24" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/BottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="81dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:maxImageSize="60dp"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:menu="@menu/navigation_menu" />
 
-    <Button
-        android:id="@+id/BeginnerBtn"
-        android:layout_width="402dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="586dp"
-        android:background="@color/colorAccent"
-        android:text="@string/Beginner"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/postPhoto"
+    <FrameLayout
+        android:id="@+id/MenuContainer"
+        android:layout_width="415dp"
+        android:layout_height="650dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/BottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
