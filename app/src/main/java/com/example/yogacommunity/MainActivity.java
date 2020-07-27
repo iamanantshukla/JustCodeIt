@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -42,30 +43,49 @@ public class MainActivity extends AppCompatActivity {
         Login= (Button) findViewById(R.id.buttonLogin);
         SignUp=(Button) findViewById(R.id.buttonSignup);
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent i = new Intent(MainActivity.this, AppHomePage.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        }
+
+        else {
 
 
-        SignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            SignUp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 
-                String passwordtxt=password.getText().toString();
-                String emailtxt=email.getText().toString();
-                register(emailtxt, passwordtxt);
-            }
-        });
+                    String passwordtxt = password.getText().toString();
+                    String emailtxt = email.getText().toString();
+                    if (passwordtxt.isEmpty() || emailtxt.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Fill all the Credentials", Toast.LENGTH_LONG).show();
+                    } else {
+                        register(emailtxt, passwordtxt);
 
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    }
+                }
+            });
 
-                String passwordtxt=password.getText().toString();
-                String emailtxt=email.getText().toString();
-                LoginTask(emailtxt, passwordtxt);
-            }
-        });
+            Login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    String passwordtxt = password.getText().toString();
+                    String emailtxt = email.getText().toString();
+                    if (passwordtxt.isEmpty() || emailtxt.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Fill all the Credentials", Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        LoginTask(emailtxt, passwordtxt);
+                    }
+                }
+            });
 
+        }
 
 
     }
@@ -122,4 +142,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }

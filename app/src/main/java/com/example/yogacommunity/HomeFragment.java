@@ -22,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -56,7 +58,9 @@ public class HomeFragment extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Blog blog= dataSnapshot.getValue(Blog.class);
                 blogList.add(blog);
+                Collections.reverse(blogList);
                 communityAdapter.notifyDataSetChanged();
+
             }
 
             @Override
