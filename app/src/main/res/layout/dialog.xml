@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:alpha="100"
+    android:elevation="2dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/a"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/quit"
+        android:textColor="@color/bg"
+        android:textSize="30sp"
+        android:background="@color/pink"
+        android:fontFamily="@font/proxima"/>
+
+    <Button
+        android:id="@+id/yesText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/a"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/proxima"
+        android:text="@string/Yes"
+        android:textAlignment="viewStart"
+        android:textColor="@color/grey_unselected"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/noText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/yesText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/proxima"
+        android:text="@string/no"
+        android:textAlignment="viewStart"
+        android:textColor="@color/grey_unselected"
+        android:textSize="18sp" />
+
+
+
+
+</RelativeLayout>

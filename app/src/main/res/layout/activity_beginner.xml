@@ -4,53 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Beginner">
 
+    <ImageView
+        android:contentDescription="@string/img_desc"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/artboard2" />
     <TextView
         android:id="@+id/tv"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:padding="10dp"
-        android:text="Beginner"
-        android:textAlignment="center"
-        android:textSize="50sp" />
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:text="@string/Beginner"
+        android:textAlignment="textStart"
+        android:textColor="@color/bg"
+        android:textSize="30sp"
+        android:fontFamily="@font/proxima" />
+
+
+    <TextView
+        android:id="@+id/weightLoss_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="31dp"
+        android:layout_toEndOf="@+id/tv"
+        android:padding="5dp"
+        android:text="@string/WeightLoss"
+        android:textColor="@color/grey_unselected"
+        android:textSize="30sp"
+        android:fontFamily="@font/proxima"/>
 
     <ListView
         android:id="@+id/lv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv"
-        android:layout_marginStart="15dp"
-        android:scrollbars="none"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="406dp"
+        android:layout_height="508dp"
         android:layout_above="@+id/startExercise"
+        android:layout_below="@+id/tv"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="5dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="20dp"
-        android:hapticFeedbackEnabled="true"
+        android:fontFamily="@font/proxima"
         android:padding="10dp"
-        android:scrollbarSize="2dp"
-        android:scrollbarStyle="insideOverlay" />
+        android:scrollbars="none" />
 
 
     <TextView
         android:id="@+id/startExercise"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:text="Start"
+        android:text="@string/Start"
         android:textColor="@color/white"
         android:padding="5dp"
+        android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:gravity="center_vertical"
+        android:elevation="2dp"
         android:textSize="30sp"
-        android:background="@color/pink"
-        tools:ignore="RtlCompat" />
+        android:background="@drawable/floating_button"
+        tools:ignore="RtlCompat"
+        android:fontFamily="@font/proxima"/>
+
 
 </RelativeLayout>
