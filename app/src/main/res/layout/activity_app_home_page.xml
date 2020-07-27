@@ -8,12 +8,11 @@
 
     <ImageView
         android:id="@+id/imageCommunity"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
         android:cropToPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/community" />
@@ -22,15 +21,16 @@
         android:id="@+id/homeLogo"
         android:layout_width="212dp"
         android:layout_height="172dp"
-        android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageYoga"
         app:srcCompat="@mipmap/logo" />
 
     <ImageView
         android:id="@+id/imageYoga"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
